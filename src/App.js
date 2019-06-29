@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import BucketList from "./components/BucketList";
+import Form from "./components/Form";
+
 import './App.css';
 
 class App extends Component {
@@ -25,15 +27,28 @@ class App extends Component {
       ]
     }
   }
+
+  addItem =(e, item) => {
+    e.preventDefault();
+    const newItem = {
+      name: item,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({
+      bucketlist: [...this.state.bucketlist, newItem]
+    })
+  }
+
   render() {
     console.log(this.state);
     return (
       <div className="App">
         <header className="App-header">
-          <h1>This is my Bucket List. </h1>  
-          <BucketList bucketlist = {this.state.bucketlist}/>
+          <h1>This is my Bucket List React App. </h1>  
         </header>
-
+          <BucketList bucketlist = {this.state.bucketlist}/>
+          <Form addItem={this.addItem} />
       </div>
     );  
   } 
