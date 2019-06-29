@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Goals from "./Goals";
 const BucketList = props => {
     return(
         <div className="bucket-list">
