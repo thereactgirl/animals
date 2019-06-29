@@ -30,3 +30,7 @@
     transform: rotate(360deg);
   }
 }
+.bucket-list {
+  background: white;
+  color: #282c34;
+}
